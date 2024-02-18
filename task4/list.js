@@ -1,4 +1,4 @@
-const li = document.querySelectorAll("li");
+const ol = document.querySelectorAll("ol");
 const btn = document.querySelector("button");
 
 function getRandomColor() {
@@ -8,10 +8,10 @@ function getRandomColor() {
     return `rgb(${red},${green},${blue})`;
 }
 
-li.forEach((entry)=>{
-    entry.addEventListener("click", (e)=>{
+ol.addEventListener("click", (e)=>{
+    if(e.target.tagName==="LI"){
         e.target.style.color=getRandomColor();
-    })
+    }
 })
 
 btn.addEventListener("click",()=>{
